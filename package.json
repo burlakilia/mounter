@@ -1,6 +1,6 @@
 {
     "name": "mounter",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "main": "src/main.js",
     "description": "Install your subprojects from git endpoint into your project",
     "categories":[
