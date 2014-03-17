@@ -21,8 +21,16 @@
         "url" : "https://github.com/burlakilia/mounter"
     },
 
+    "bugs": {
+        "url": "https://github.com/burlakilia/mounter/issues"
+    },
+
     "devDependencies": {
         "nodeunit": "*"
+    },
+
+    "bin": {
+        "mounter": "bin/mounter"
     },
 
     "dependencies": {
