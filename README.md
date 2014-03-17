@@ -14,15 +14,14 @@ install
 configuration
 =======
 
-`
- {
-    "jquery": {
-        "path": "./test/misc/dist/app/modules",
-        "endpoint": "git-https://github.com/jquery/jquery.git#1.9.x",
-        "cleanup": [
-            "rmdir /s/q .git"
-        ]
+
+    {
+        "jquery": {
+            "path": "./test/misc/dist/app/modules",
+            "endpoint": "git-https://github.com/jquery/jquery.git#1.9.x",
+            "cleanup": [
+                "rmdir /s/q .git"
+            ]
+        }
     }
 
- }
-`
