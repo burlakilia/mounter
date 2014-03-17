@@ -1,5 +1,5 @@
 exports['config should have correct endpoint for private git endpoint'] = function(test) {
-    var config = require('../src/utils/conf').load(__dirname + '/misc/components')['app'];
+    var config = require('../src/utils/conf').load(__dirname + '/misc/mounter')['app'];
 
     test.ok(typeof config.endpoint === 'object', 'have endpoint object')
     test.ok(config.endpoint.version === '0.0.1', 'correct version');
@@ -9,7 +9,7 @@ exports['config should have correct endpoint for private git endpoint'] = functi
 };
 
 exports['config should have correct endpoint for github'] = function(test) {
-    var config = require('../src/utils/conf').load(__dirname + '/misc/components')['jquery'];
+    var config = require('../src/utils/conf').load(__dirname + '/misc/mounter')['jquery'];
 
     console.log(config);
 

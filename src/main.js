@@ -29,13 +29,15 @@ exports.run = function(args, completed) {
         val.indexOf('--prefix=') !== -1 && (prefix = val.replace('--prefix=', ''));
     });
 
-    prefix = path.resolve(process.cwd(), prefix);
-    config = require('./utils/conf').load(prefix + '/components.json')
-
-    if (available.indexOf(action) === -1) {
-        completed(new Error('Invalid action'));
+    if (!action && available.indexOf(action) === -1) {
+        console.log('Usage: mounter <command>');
+        console.log('where <command> is one of:', available.join(', '));
+        completed(null);
         return;
     }
+
+    prefix = path.resolve(process.cwd(), prefix);
+    config = require('./utils/conf').load(prefix + '/mounter.json')
 
     execute(action, completed);
 }

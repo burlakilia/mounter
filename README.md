@@ -13,7 +13,7 @@ install
 
 configuration
 =======
-Add components.json into your project folder. 
+Add mounter.json into your project folder.
 
 
     {
