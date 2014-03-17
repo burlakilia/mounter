@@ -1,6 +1,6 @@
 {
     "app": {
-        "path": "./test/misc/dist",
+        "path": "./dist",
         "endpoint": "git://git@git.dev:itoapp.git#0.0.1",
         "build": [
             "jam upgrade"
@@ -8,7 +8,7 @@
     },
 
     "jquery": {
-        "path": "./test/misc/dist/app/modules",
+        "path": "./dist/app/modules",
         "endpoint": "git-https://github.com/jquery/jquery.git#1.9.x",
         "cleanup": [
             "rmdir /s/q .git"
