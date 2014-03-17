@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+var programm = require('../src/main'),
+    args = process.argv.slice(2);
+
+process.bin = process.title = 'mounter';
+
+programm.run(args, function(err, status) {
+
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    }
+
+    console.log('Completed!');
+});
