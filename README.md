@@ -13,6 +13,7 @@ install
 
 configuration
 =======
+Add components.json into your project folder. 
 
 
     {
