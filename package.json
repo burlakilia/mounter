@@ -1,23 +1,32 @@
 {
     "name": "mounter",
     "version": "0.0.1",
-    "description": "Install your subprojects fron gi endpoint into your project",
+    "main": "src/main.js",
+    "description": "Install your subprojects from git endpoint into your project",
     "categories":[
-        "Utila", "Installer", "Git", "Semver"
+        "Utils", "Installer", "Git", "Semver"
     ],
+
     "keywords": [
         "installer", "git", "package", "manager"
     ],
+
     "author": {
         "name": "Burlak Ilia",
         "email": "i.burlak@it-online.ru"
     },
 
-    "main": "src/main.js",
+    "repository": {
+        "type" : "git",
+        "url" : "https://github.com/burlakilia/mounter"
+    },
+
+    "devDependencies": {
+        "nodeunit": "*"
+    },
 
     "dependencies": {
         "semver": "2.2.1",
-        "nodeunit": "*",
         "async": "*",
         "mkdirp": "*"
     }
