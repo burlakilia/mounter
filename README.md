@@ -13,8 +13,9 @@ install
 
 configuration
 =======
+Add components.json into your project folder. 
 
-`
+
     {
         "jquery": {
             "path": "./test/misc/dist/app/modules",
@@ -23,6 +24,5 @@ configuration
                 "rmdir /s/q .git"
             ]
         }
-
     }
-`
+
