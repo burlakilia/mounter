@@ -11,5 +11,5 @@ module.exports = function(name, base, component, complete) {
     }
 
     tasks.length > 0 && console.log('Build: ' + name);
-    async.each(tasks, build, complete);
+    async.eachSeries(tasks, build, complete);
 };
