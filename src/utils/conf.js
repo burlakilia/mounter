@@ -27,7 +27,7 @@ function parse(component) {
         }
 
     } catch(e) {
-        throw new Error('Incorrect git endpoint:' + component.endpoint);
+        throw new Error('Incorrect git endpoint: ' + component.endpoint);
     }
 
     component.endpoint = {
