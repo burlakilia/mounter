@@ -3,6 +3,8 @@ Mounter
 
 Mount to your project some sub projects from git, and prepare this sub project for using.
 
+[![Build Status](https://travis-ci.org/burlakilia/mounter.svg?branch=master)](https://travis-ci.org/burlakilia/mounter)
+
 Install
 =======
 
