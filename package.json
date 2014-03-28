@@ -33,6 +33,10 @@
         "mounter": "bin/mounter"
     },
 
+    "scripts": {
+        "test": "nodeunit ./test"
+    },
+
     "dependencies": {
         "semver": "2.2.1",
         "async": "*",
