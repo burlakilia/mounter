@@ -36,6 +36,7 @@ Add `mounter.json` into your project folder. This config defines several options
 * build - array of commands which execute in component folder
 * cleanup - array of commands which execute in component folder
 
+
     {
         "jquery": {
             "path": "./test/misc/dist/app/modules",
