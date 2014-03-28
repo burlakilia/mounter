@@ -37,17 +37,17 @@ Add `mounter.json` into your project folder. This config defines several options
 * cleanup - array of commands which execute in component folder
 
 ```
-   {
-     "jquery": {
-            "path": "./test/misc/dist/app/modules",
-            "endpoint": "git-https://github.com/jquery/jquery.git#1.9.x",
-            "build": [
-                "npm run build",
-                "grunt"
-            ]
-            "cleanup": [
-                "rmdir /s/q .git"
-            ]
-     }
-  }
+{
+    "jquery": {
+        "path": "./test/misc/dist/app/modules",
+        "endpoint": "git-https://github.com/jquery/jquery.git#1.9.x",
+        "build": [
+            "npm run build",
+            "grunt"
+        ]
+        "cleanup": [
+            "rmdir /s/q .git"
+        ]
+    }
+}
 ```
