@@ -22,9 +22,10 @@ function parse(component) {
 
         repository = uri.href.match(/(.+\/\/)?([^#]*)?/)[2].replace(/\/:/, ':');
 
-        if (uri.protocol.length === 2 && uri.protocol[1]) {
+        if (uri.protocol.length === 2 && ['https', 'http'].indexOf(uri.protocol[1]) !== -1) {
             repository = uri.protocol[1].replace(/^-/, '') + '://' + repository;
         }
+
 
     } catch(e) {
         throw new Error('Incorrect git endpoint: ' + component.endpoint);
@@ -37,8 +38,8 @@ function parse(component) {
     };
 
     return component;
-}
+};
 
 exports.load = function(path) {
     return treat(require(path));
-}
+};

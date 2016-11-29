@@ -4,10 +4,10 @@ var cp = require('child_process').exec,
     curry = require('../utils/curry');
 
 var commands = {
-    lsRemote: 'git ls-remote --{{action}} {{repository}}',
+    lsRemote: 'git ls-remote --tags --heads {{repository}}',
     clone: 'git clone {{repository}} {{path}}',
     pull: 'cd {{path}} && git checkout master && git pull',
-    checkout: 'cd {{path}} && git checkout -B {{version}} && git reset --hard {{version}}'
+    checkout: 'cd {{path}} && git checkout -B {{version}} && git pull origin {{version}}'
 };
 
 
@@ -35,7 +35,7 @@ function exec(command, complete) {
 Git.prototype.tags = function(complete) {
 
     function clean(str) {
-        return str.replace(/(refs\/tags\/)(.*)(\^{})/, '$2');
+        return str.replace(/refs\/(tags|heads)\/(.*)/, '$2');
     }
 
     function parse(err, stdout) {
@@ -46,15 +46,16 @@ Git.prototype.tags = function(complete) {
             return;
         }
 
-        list = stdout ? stdout.match(/refs\/tags\/(.*)/gi) : [];
+        list = stdout ? stdout.match(/refs\/(tags|heads)\/(.*)/gi) : [];
         list = list.map(clean);
+
+        console.log('!!!!', list);
+
         complete(null, list);
     }
 
     exec(commands.lsRemote
-        .replace('{{repository}}', this.config.repository)
-        .replace('{{action}}', 'tags'), parse);
-
+        .replace('{{repository}}', this.config.repository), parse);
 };
 
 Git.prototype.clone = function(path, complete) {
@@ -70,6 +71,7 @@ Git.prototype.pull = function(path, complete) {
 };
 
 Git.prototype.update = function(base, tag, complete) {
+    console.log(fs.existsSync(base) ? 'pull' : 'clone');
     this[fs.existsSync(base) ? 'pull' : 'clone'](base, curry(this.checkout, base, tag, complete));
 }
 

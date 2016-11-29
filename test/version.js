@@ -42,3 +42,11 @@ exports['modules should resolve dirty version list'] = function(test) {
 
     test.done();
 }
+
+exports['modules should resolve branch name'] = function(test) {
+    var version = require('../src/utils/version'),
+        list = ['chat-231', 'chat-234'];
+
+    test.ok(version.get('chat-231', list) === 'chat-231', 'return branch');
+    test.done();
+}
