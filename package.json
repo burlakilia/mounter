@@ -1,6 +1,6 @@
 {
     "name": "mounter",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "src/main.js",
     "description": "Install your subprojects from git endpoint into your project",
     "categories":[
@@ -38,7 +38,7 @@
     },
 
     "dependencies": {
-        "semver": "2.2.1",
+        "semver": "*",
         "async": "*",
         "mkdirp": "*"
     }
